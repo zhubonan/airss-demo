@@ -1,0 +1,25 @@
+#!/bin/bash
+set -e
+
+AIRSS_URL='http://bit.ly/2KtvEWU'
+
+curl -L -o AIRSS.tgz $AIRSS_URL
+tar zxf AIRSS.tgz
+cd airss-0.9.1
+export FC=gfortran
+make all
+make install
+
+# Copy the executable to the folder
+mkdir -p ~/.local/bin
+cp bin/* ~/.local/bin/
+
+# Make a symbolic link to AIRSS's examples
+ln -s ~/airss-0.9.1/examples ~/examples
+
+# Append to bashrc
+
+cat >> .bashrc <<- EOM
+    cd examples
+    cat README
+EOM

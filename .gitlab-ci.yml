@@ -1,0 +1,21 @@
+image: python:3.6
+
+build_docker:
+  # Test building docker image using repo2docker
+  stage: test
+  image: docker:stable
+  services:
+    - docker:dind
+  before_script:
+    - echo '0. Installing dependencies...' 
+    - apk add --no-cache pigz python3
+    - python3 -m venv venv
+    - . venv/bin/activate
+    - pip install jupyter-repo2docker
+  script:
+    - export VERSION=$(python3 -c "import repo2docker; print(repo2docker.__version__)")
+    - jupyter-repo2docker --debug --image-name "airsspy-repo2docker:test"  --user-id 1000 --user-name bz1 --no-run .
+    - docker ps
+    - docker images
+  only:
+    - master

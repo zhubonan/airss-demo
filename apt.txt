@@ -1,0 +1,9 @@
+gfortran
+liblapack-dev
+libopenblas-dev
+curl
+bc
+nano
+vim
+qhull-bin
+grace

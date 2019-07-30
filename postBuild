@@ -21,5 +21,6 @@ ln -s ~/airss-0.9.1/examples ~/examples
 
 cat >> $HOME/.bashrc << EOM
 cd examples
+echo "List of AIRSS examples\n\n"
 cat $HOME/examples/README
 EOM

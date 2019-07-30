@@ -19,7 +19,7 @@ ln -s ~/airss-0.9.1/examples ~/examples
 
 # Append to bashrc
 
-cat >> .bashrc <<- EOM
-    cd examples
-    cat README
+cat >> $HOME/.bashrc << EOM
+cd examples
+cat $HOME/examples/README
 EOM

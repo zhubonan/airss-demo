@@ -5,7 +5,10 @@ AIRSS_URL='http://bit.ly/2KtvEWU'
 
 curl -L -o AIRSS.tgz $AIRSS_URL
 tar zxf AIRSS.tgz
-cd airss-0.9.1
+rm AIRSS.tgz
+
+mv airss-* airss
+cd airss
 export FC=gfortran
 make all
 make install
@@ -15,12 +18,19 @@ mkdir -p ~/.local/bin
 cp bin/* ~/.local/bin/
 
 # Make a symbolic link to AIRSS's examples
-ln -s ~/airss-0.9.1/examples ~/examples
+ln -s ~/airss/examples ~/examples
 
-# Append to bashrc
+# Append welcome message to bashrc
 
 cat >> $HOME/.bashrc << EOM
+# Let the user start in the examples folder
 cd examples
-echo "List of AIRSS examples\n\n"
+# Print AIRSS banner
+head -n 10 $HOME/airss/README
+echo ""
+# Print the list of examples
+echo "List of AIRSS examples:"
+echo ""
 cat $HOME/examples/README
+
 EOM

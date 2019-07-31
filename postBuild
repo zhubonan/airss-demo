@@ -28,9 +28,9 @@ cd examples
 # Print AIRSS banner
 head -n 10 $HOME/airss/README
 echo ""
-# Print the list of examples
-echo "List of AIRSS examples:"
-echo ""
-cat $HOME/examples/README
 
+# Print a list of examples
+echo -e "List of AIRSS examples that can be run now:\n"
+head -n 14 $HOME/examples/README
+echo -e "See README for a full list of examples\n"
 EOM

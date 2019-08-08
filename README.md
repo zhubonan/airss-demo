@@ -9,4 +9,5 @@ You can explore the examples and see the structure searching in action.
 Note
 ----
 The link takes you directly to a terminal. Some basic knowledge of Linux command line (bash) is needed to run the samples.
-You can still browse the examples in the browser based file explorer by click the Jupyter logo at top left.
+You can still browse the examples in the browser-based file explorer by click the Jupyter logo at top left.
+Please allow up to to 1 minute for the server to start. If no pre-built image is avaliable, it may take up to 5 minutes for the initial building process.

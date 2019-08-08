@@ -33,4 +33,5 @@ echo ""
 echo -e "List of AIRSS examples that can be run now:\n"
 head -n 14 $HOME/examples/README
 echo -e "See README for a full list of examples\n"
+echo -e "Hint: Click the Jupyter Logo at the top left to browse the files\n"
 EOM

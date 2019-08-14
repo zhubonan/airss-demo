@@ -27,6 +27,8 @@ cat >> $HOME/.bashrc << EOM
 cd examples
 # Print AIRSS banner
 head -n 10 $HOME/airss/README
+# Customize the prompt
+PS1="${debian_chroot:+($debian_chroot)}airss@airss-demo:\w\$"
 echo ""
 
 # Print a list of examples

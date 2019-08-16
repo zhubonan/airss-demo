@@ -23,13 +23,13 @@ ln -s ~/airss/examples ~/examples
 
 # Append welcome message to bashrc
 
-cat >> $HOME/.bashrc << EOM
+cat >> $HOME/.bashrc <<"EOM"
 # Let the user start in the examples folder
 cd examples
 # Print AIRSS banner
 head -n 10 $HOME/airss/README
 # Customize the prompt
-PS1="${debian_chroot:+($debian_chroot)}airss@airss-demo:\w\$"
+PS1="${debian_chroot:+($debian_chroot)}airss@airss-demo:\w\$ "
 echo ""
 
 # Print a list of examples

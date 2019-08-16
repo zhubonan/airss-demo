@@ -7,3 +7,4 @@ nano
 vim
 qhull-bin
 grace
+ghostscript

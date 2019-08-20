@@ -13,7 +13,7 @@
         endif
  
 +       if (gracefile) then
-+          ctemp="gracebat hull.agr -hdevice PostScript -hardcopy -printfile hull.ps && ps2pdf hull.ps hull.pdf"
++          ctemp="gracebat hull.agr -hdevice PostScript -hardcopy -printfile hull.ps && ps2pdf14 -dOptimize hull.ps hull.pdf"
 +          stat=0
 +          call system(ctemp)
 +          ctemp='Problem executing external command :: '//trim(ctemp)
@@ -35,7 +35,7 @@
         endif
  
 +       if (gracefile) then
-+          ctemp="gracebat ternary.agr -hdevice PostScript -hardcopy -printfile ternary.ps && ps2pdf ternary.ps ternary.pdf"
++          ctemp="gracebat ternary.agr -hdevice PostScript -hardcopy -printfile ternary.ps && ps2pdf14 -dOptimize ternary.ps ternary.pdf"
 +          stat=0
 +          call system(ctemp)
 +          ctemp='Problem executing external command :: '//trim(ctemp)

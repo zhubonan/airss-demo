@@ -11,6 +11,9 @@ cd airss
 export FC=gfortran
 # Path cryan so that -xg saves to PNG
 patch src/cryan/src/cryan.f90 ../cryan_patch
+# Apppy spglib makefile patch
+cp ../spglib_makefile external/spglib/makefile
+
 make all
 make install
 

@@ -1,8 +1,7 @@
 #!/bin/bash
 set -e
 
-AIRSS_URL='https://www.mtg.msm.cam.ac.uk/files/airss-0.9.1.tgz'
-
+AIRSS_URL='https://www.mtg.msm.cam.ac.uk/system/files/documents/airss-0.9.1.tgz'
 curl -L -o AIRSS.tgz $AIRSS_URL
 tar zxf AIRSS.tgz
 rm AIRSS.tgz
@@ -11,8 +10,9 @@ cd airss
 export FC=gfortran
 # Path cryan so that -xg saves to PNG
 patch src/cryan/src/cryan.f90 ../cryan_patch
-# Apppy spglib makefile patch
+# Apppy spglib makefile patch and symmol
 cp ../spglib_makefile external/spglib/makefile
+cp ../symmol.zip external/symmol/
 
 make all
 make install

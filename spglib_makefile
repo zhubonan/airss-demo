@@ -7,9 +7,9 @@ SPG_VERSION=1.9.4
 SPGLIB=spglib-$(SPG_VERSION)
 
 ifeq ($(SPG_VERSION), master)
-SPG_ARCHIVE=$(SPG_VERSION).zip
+  SPG_ARCHIVE=$(SPG_VERSION).zip
 else
-SPG_ARCHIVE=v$(SPG_VERSION).zip
+  SPG_ARCHIVE=v$(SPG_VERSION).zip
 endif
 
 OBJ = $(SPGLIB)/src/arithmetic.o $(SPGLIB)/src/cell.o $(SPGLIB)/src/debug.o $(SPGLIB)/src/delaunay.o $(SPGLIB)/src/hall_symbol.o $(SPGLIB)/src/kgrid.o \
@@ -18,13 +18,13 @@ OBJ = $(SPGLIB)/src/arithmetic.o $(SPGLIB)/src/cell.o $(SPGLIB)/src/debug.o $(SP
     $(SPGLIB)/src/spg_database.o $(SPGLIB)/src/spglib.o $(SPGLIB)/src/spin.o $(SPGLIB)/src/symmetry.o
 
 get:
-    -wget -c --timeout=2 --tries=1 -nv https://github.com/atztogo/spglib/archive/v$(SPG_VERSION).zip
-    -unzip -qq -u $(SPG_ARCHIVE) '$(SPGLIB)/src/*' '$(SPGLIB)/example/*'
+	-wget -c --timeout=2 --tries=1 -nv https://github.com/atztogo/spglib/archive/v$(SPG_VERSION).zip
+	-unzip -qq -u $(SPG_ARCHIVE) '$(SPGLIB)/src/*' '$(SPGLIB)/example/*'
 
 libsymspg.a: $(OBJ)
-    -ar -cr $(PREFIX)/lib/libsymspg.a $(OBJ)
-    -mkdir -p $(PREFIX)/include/spglib
-    -cp $(SPGLIB)/src/spglib.h $(PREFIX)/include/spglib/spglib.h
+	-ar -cr $(PREFIX)/lib/libsymspg.a $(OBJ)
+	-mkdir -p $(PREFIX)/include/spglib
+	-cp $(SPGLIB)/src/spglib.h $(PREFIX)/include/spglib/spglib.h
 
 clean:
-    -rm -fr $(SPGLIB)
+	-rm -fr $(SPGLIB)

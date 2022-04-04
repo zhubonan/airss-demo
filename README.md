@@ -1,6 +1,6 @@
 AIRSS Demostration
 ------------------
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gl/airss%2Fairss-demo/master?urlpath=terminals/1)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gl/airss%2Fairss-demo/HEAD)
 
 This repository defines a binder environment for running interactive demonstrations for Ab-initio Random Structure Searching.
 Click the badge above to launch a cloud hosted Jupyter notebook environment with AIRSS pre-installed. 

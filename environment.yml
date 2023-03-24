@@ -1,0 +1,6 @@
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  - airss-with-default-names==0.9.3

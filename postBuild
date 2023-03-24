@@ -10,7 +10,7 @@ rm AIRSS.tgz
 ln -s $(pwd)/airss/examples ${HOME}/examples
 
 # Append additional informations
-hint='Hint: Pass a -xg flag to cryan/ca to save the plot as PDF. You can click the Jupyter button to use the file explorer and view it.'
+hint='Hint: Pass a `-xgf png` flag to cryan/ca -m to save the plot as PDF. You can click the Jupyter button to use the file explorer and view it.'
 
 echo ${hint} >> airss/examples/1.9/README.md
 echo ${hint} >> airss/examples/1.10/README.md

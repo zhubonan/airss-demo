@@ -5,10 +5,20 @@ AIRSS_URL='https://www.mtg.msm.cam.ac.uk/files/airss-0.9.3.tgz'
 curl -L -o AIRSS.tgz $AIRSS_URL
 tar zxf AIRSS.tgz
 rm AIRSS.tgz
-cd airss
 
 # Make a symbolic link to AIRSS's examples
-ln -s $(pwd)/examples ${HOME}/examples
+ln -s $(pwd)/airss/examples ${HOME}/examples
+
+# Append additional informations
+hint='Hint: Pass a -xg flag to cryan/ca to save the plot as PDF. You can click the Jupyter button to use the file explorer and view it.'
+
+echo ${hint} >> airss/examples/1.9/README.md
+echo ${hint} >> airss/examples/1.10/README.md
+
+echo `pwd`
+echo `ls`
+echo $HOME
+
 
 # Append welcome message to bashrc
 
@@ -29,11 +39,5 @@ echo -e 'To read the overall README, use: less ~/airss/README.md\n'
 echo -e 'To get started, please read about the first example with: less 1.1/README.md/\n'
 echo -e 'Hint: Click the Jupyter Logo at the top left to browse the files\n'
 EOM
-
-# Append additional informations
-hint='Hint: Pass a -xg flag to cryan/ca to save the plot as PDF. You can click the Jupyter button to use the file explorer and view it.'
-
-echo ${hint} >> examples/1.9/README.md
-echo ${hint} >> examples/1.10/README.md
 
 jupyter lab workspaces import workspace.json

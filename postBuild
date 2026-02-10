@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-AIRSS_URL='https://www.mtg.msm.cam.ac.uk/files/airss-0.9.3.tgz'
+AIRSS_URL='https://www.mtg.msm.cam.ac.uk/files/airss-v0.9.4.tgz'
 curl -L -o AIRSS.tgz $AIRSS_URL
 tar zxf AIRSS.tgz
 rm AIRSS.tgz
